@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import pickle
 
+# Simple dataset of three four features 
 dataset = pd.read_csv('hiring.csv')
 
 dataset['experience'].fillna(0, inplace=True)
@@ -36,4 +37,5 @@ pickle.dump(regressor, open('model.pkl','wb'))
 
 # Loading model to compare the results
 model = pickle.load(open('model.pkl','rb'))
+print("Test one prediction")
 print(model.predict([[2, 9, 6]]))
