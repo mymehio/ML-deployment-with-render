@@ -1,11 +1,11 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
-import pickle
+import pickle # will help to dump and load ML model
 
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
 
-@app.route('/')
+@app.route('/')  # your default root page, it will open index.htlp by default 
 def home():
     return render_template('index.html')
 
